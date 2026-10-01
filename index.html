@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#07143c" />
+  <title>Coin Rush — Run. Jump. Shine.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <div class="game-frame">
+      <canvas id="game" aria-label="Coin Rush game"></canvas>
+      <header class="hud" aria-live="polite">
+        <div class="hud-pill"><span class="icon">🪙</span><span id="score">000000</span></div>
+        <div class="level-badge">LEVEL <span id="level">1</span></div>
+        <div class="hud-actions">
+          <div class="hud-pill"><span class="icon">❤️</span><span id="lives">3</span></div>
+          <button id="pauseBtn" class="icon-button" aria-label="Pause game">Ⅱ</button>
+        </div>
+      </header>
+
+      <section id="menu" class="overlay active">
+        <div class="logo-mark">🪙</div>
+        <p class="eyebrow">THE ULTIMATE RUN</p>
+        <h1>COIN<br><span>RUSH</span></h1>
+        <p class="tagline">Run fast. Shine bright. Beat your best!</p>
+        <button id="playBtn" class="primary-button">PLAY NOW <b>→</b></button>
+        <div class="best-card">BEST SCORE <strong id="bestScore">000000</strong></div>
+        <p class="hint">TAP TO JUMP • COLLECT COINS • CLEAR 10 LEVELS</p>
+      </section>
+
+      <section id="pausePanel" class="overlay">
+        <div class="panel-card"><div class="panel-icon">⏸</div><h2>PAUSED</h2><p>Catch your breath, runner!</p><button id="resumeBtn" class="primary-button">RESUME</button><button id="restartBtn" class="text-button">RESTART LEVEL</button></div>
+      </section>
+
+      <section id="levelPanel" class="overlay">
+        <div class="panel-card level-card"><p class="eyebrow">STAGE COMPLETE</p><h2 id="levelTitle">LEVEL 1</h2><div class="stars">★ ★ ★</div><p class="result-line">SCORE <strong id="resultScore">000000</strong></p><p class="result-line">COINS <strong id="resultCoins">0</strong></p><button id="nextBtn" class="primary-button">NEXT LEVEL <b>→</b></button></div>
+      </section>
+
+      <section id="gameOverPanel" class="overlay">
+        <div class="panel-card"><div class="panel-icon">💥</div><h2>OH NO!</h2><p>The rush is not over yet.</p><p class="result-line">SCORE <strong id="overScore">000000</strong></p><button id="tryAgainBtn" class="primary-button">TRY AGAIN</button><button id="homeBtn" class="text-button">MAIN MENU</button></div>
+      </section>
+    </div>
+    <p class="footer-note">COIN RUSH <span>•</span> MADE FOR THE BIG SCREEN &amp; YOUR POCKET</p>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
